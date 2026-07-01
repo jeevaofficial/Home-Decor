@@ -18,7 +18,10 @@ const app = express();
 // Set security HTTP headers
 app.use(helmet());
 
-const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:3000")
+const allowedOrigins = (
+  process.env.CLIENT_URL ||
+  "http://localhost:3000,http://localhost:5173,https://home-decor-vuee.onrender.com"
+)
   .split(",")
   .map((origin) => origin.trim());
 
